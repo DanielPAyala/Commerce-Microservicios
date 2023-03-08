@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33130.400
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Clients", "01.Clients", "{29315D77-A6B4-427F-9DEC-711309E5A6D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Api.Gateways", "02.Api.Gateways", "{FB1C20AE-9835-4B4D-9355-4E4B49A1706D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Services", "03.Services", "{968E0A06-F5C6-4A27-A61A-8DD268F2E83E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Identity", "01.Identity", "{71981269-D70B-4AD0-844D-32E4A8E898ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Catalog", "02.Catalog", "{AB82EF6E-A0AF-4315-814C-F3B4849990B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Customer", "03.Customer", "{CD718172-4817-45F1-AB42-A83B78E9D640}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Order", "04.Order", "{493C37A2-481C-44C3-B721-862369DBF220}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{71981269-D70B-4AD0-844D-32E4A8E898ED} = {968E0A06-F5C6-4A27-A61A-8DD268F2E83E}
+		{AB82EF6E-A0AF-4315-814C-F3B4849990B3} = {968E0A06-F5C6-4A27-A61A-8DD268F2E83E}
+		{CD718172-4817-45F1-AB42-A83B78E9D640} = {968E0A06-F5C6-4A27-A61A-8DD268F2E83E}
+		{493C37A2-481C-44C3-B721-862369DBF220} = {968E0A06-F5C6-4A27-A61A-8DD268F2E83E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {365989AA-D6CA-40D3-8410-5A19B8723F68}
+	EndGlobalSection
+EndGlobal
