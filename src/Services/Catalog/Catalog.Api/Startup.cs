@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Catalog.Api
@@ -33,6 +34,10 @@ namespace Catalog.Api
                     Configuration.GetConnectionString("Default"),
                     x => x.MigrationsHistoryTable("__EFMigrationHistory", "Catalog")
                 )
+            );
+
+            services.AddMediatR(cfg =>
+                cfg.RegisterServicesFromAssembly(Assembly.Load("Catalog.Service.EventHandlers"))
             );
 
             services.AddTransient<IProductQueryService, ProductQueryService>();
