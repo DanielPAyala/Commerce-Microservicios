@@ -1,4 +1,5 @@
 ﻿using Catalog.Domain;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Catalog.Persistence.Database.Configuration
             entityTypeBuilder.HasIndex(x => x.ProductId);
             entityTypeBuilder.Property(x => x.Name).IsRequired().HasMaxLength(100);
             entityTypeBuilder.Property(x => x.Description).IsRequired().HasMaxLength(500);
+            entityTypeBuilder.Property(x => x.Price).HasColumnType("decimal(18,2)");
 
             var products = new List<Product>();
             var random = new Random();

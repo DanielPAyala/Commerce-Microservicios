@@ -1,6 +1,7 @@
 using Catalog.Persistence.Database;
 using Catalog.Service.Queries;
 using Catalog.Service.Queries.IServices;
+using Common.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -46,11 +47,18 @@ namespace Catalog.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            if (env.IsDevelopment())
+            if (!env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                loggerFactory.AddSyslog(
+                    Configuration.GetValue<string>("Papertrail:host"),
+                    Configuration.GetValue<int>("Papertrail:port")
+                );
             }
 
             app.UseRouting();

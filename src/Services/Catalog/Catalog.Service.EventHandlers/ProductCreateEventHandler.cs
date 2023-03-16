@@ -2,6 +2,7 @@
 using Catalog.Persistence.Database;
 using Catalog.Service.EventHandlers.Commands;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,9 +14,11 @@ namespace Catalog.Service.EventHandlers
     public class ProductCreateEventHandler : INotificationHandler<ProductCreateCommand>
     {
         private readonly ApplicationDbContext _context;
-        public ProductCreateEventHandler(ApplicationDbContext context)
+        private readonly ILogger<ProductCreateEventHandler> _logger;
+        public ProductCreateEventHandler(ApplicationDbContext context, ILogger<ProductCreateEventHandler> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public async Task Handle(ProductCreateCommand command, CancellationToken cancellationToken)
